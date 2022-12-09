@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\SafetyCommerce.Application\SafetyCommerce.Application.csproj" />
+    <ProjectReference Include="..\..\Core\SafetyCommerce.Domain\SafetyCommerce.Domain.csproj" />
+    <ProjectReference Include="..\SafetyCommerce.Persistence\SafetyCommerce.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>

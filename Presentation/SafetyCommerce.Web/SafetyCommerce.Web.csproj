@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <!--<Nullable>enable</Nullable>-->
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\SafetyCommerce.Application\SafetyCommerce.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\SafetyCommerce.Infrastructure\SafetyCommerce.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\SafetyCommerce.Persistence\SafetyCommerce.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,51 @@
+﻿@model AuthenticatorVM
+
+
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label>SMS Doğrulama Kodu:</label>
+                
+                <input type="hidden" asp-for="SharedKey" />
+                <input type="hidden" />
+                <input type="text" class="form-control" asp-for="VerificationCode">
+            </div>
+            <br />
+            <p>
+                Cep telefonunuza gönderilen sms içindeki doğrulama kodunu giriniz.
+            </p>
+            <button type="submit" class="btn btn-light ">Vazgeç</button>
+            <button type="submit" class="btn btn-primary">Devam</button>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+@*@if (TempData["message2"] != null)
+{
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            @TempData["message2"]
+        </div>
+        <div class="col-md-4">
+            <div class="alert alert-info" role="alert">
+                Kurtarma Kodları
+            </div>
+            <ul class="list-group">
+                @foreach (var code in TempData["message3"] as IEnumerable<string>)
+                {
+                    <li class="list-group-item">@code</li>
+                }
+            </ul>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ScriptPartial");
+    }
+ }*@

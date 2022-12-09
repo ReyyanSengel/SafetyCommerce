@@ -1,0 +1,94 @@
+﻿@model SupplierAppVM
+
+<div class="col-12 grid-margin stretch-card ">
+    <div class="card ">
+        <div class="card-body">
+            <b><p class="card-description"> ARAÇ ÖDEME TALEP FORMU </p></b>
+            <form asp-action="SupplierApp" class="forms-sample" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <select name="kişilik">
+                        <option value="Personality">Gerçek Kişilik</option>
+                        <option value="Personality">Tüzel Kişilik</option>
+                    </select>
+                </div>
+                <br />
+                <div class="form-group">
+                    <input class="form-control" type="text" asp-for="NameSurname" placeholder="Satıcı Adı ve Soyadı" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <input class="form-control" type="text" asp-for="TCKN" placeholder="T.C. Kimlik Numarası" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <input class="form-control" type="text" asp-for="SupplierPhone" placeholder="Satıcı Cep Telefonu Numarası" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <input class="form-control" type="text" asp-for="SupplierEmail" placeholder="Satıcı Email" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <input class="form-control" type="text" asp-for="SupplierIBAN" placeholder="Satıcı IBAN" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <input class="form-control" type="text" asp-for="ReceiverEmail" placeholder="Alıcı Email" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <input class="form-control" type="text" asp-for="ReceiverPhone" placeholder="Alıcı Cep Telefonu Numarası" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <input class="form-control" type="text" asp-for="NumberPlate" placeholder="Araç Plakası" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <input class="form-control" type="text" asp-for="Price" placeholder="Satış Tutarı " />
+                </div>
+                <br />
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" >
+                    <label class="form-check-label" >Tarafıma hizmet sunulması amacıyla, bulut tabanlı yazılımların
+                        yurt dışında tutulması nedeniyle kişisel verilerimin yurt dışına aktarılmasına ilişkin <b>Açık Rıza Metni</b>
+                        'ni okudum. Kişisel verilerimin bu kapsamda aktarılmasına onay veriyorum.
+                    </label>
+                </div>
+                <br />
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" >
+                    <label class="form-check-label">
+                        TURK Elektronik Para A.Ş. tarafından; yukarıda yer alan iletişim bilgilerime bilgilendirme, mal ve hizmet
+                        tanıtımı,reklam ve promosyon gibi amaçlarla yararlı olabilecek içeriklere ulaşabilmem için ticari elektronik
+                        ileti gönderilmesini her zaman reddetme hakkımı saklı olduğunu bilerek onay veriyorum.
+                    </label>
+                </div>
+                <br />
+                <p>
+                    Kişisel verileriniz ,talebinizin gerçekleştirilmesi amacıyla 6698 Sayılı Kanun kapsamında işlenmektedir.Aydınlatma
+                    Metnine <a href="#"> <b>buradan</b> </a>ulaşabilirsiniz.
+                </p>
+                <br />
+                <button type="submit" class="btn btn-info mr-2">Talep Oluştur</button>
+            </form>
+                
+        </div>
+    </div>
+</div>
+
+
+
+               
+                    
+                    
+                   
+                    
+                        
+                           
+                          
+                        
+                    
+                    
+                    

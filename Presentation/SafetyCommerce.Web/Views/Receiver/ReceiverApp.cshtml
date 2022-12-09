@@ -1,0 +1,28 @@
+﻿@model ReceiverAppVM
+
+<div class="col-12 grid-margin stretch-card w-50  ">
+    <div class="card ">
+        <div class="card-body">
+            <b><p class="card-description"> Referans Kodunu Giriniz. </p></b>
+            <form asp-action="SupplierApp" class="forms-sample" method="post">
+                <div class="form-group">
+                    <input class="form-control w-25" type="text" asp-for="ReferenceCode" placeholder="Referans Numarası" />
+                </div>
+                <br />
+                <button type="submit" class="btn btn-info mr-2">Tamam</button>
+                <br />
+                <a href="#"> <b>Referans Numarasını Unuttum</b> </a>
+                <p>
+                    *Alıcı referans kodu satıcı tarafından oluşturulmaktadır.<br />
+                    *Lütfen satıcı kişi ile ParamGüvebde hesabı ile ilgili iletişime geçiniz.
+                </p>
+                <br />
+                
+            </form>
+
+        </div>
+    </div>
+</div>
+               
+                
+               
