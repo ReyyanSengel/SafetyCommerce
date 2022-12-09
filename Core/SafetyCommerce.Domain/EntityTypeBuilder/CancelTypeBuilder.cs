@@ -10,8 +10,8 @@ namespace SafetyCommerce.Domain.EntityTypeBuilder
         {
             builder.Property(x => x.Phone)
                 .IsRequired()
-                .HasColumnType("int")
-                .HasMaxLength(11);
+                .HasColumnType("int");
+                
         }
     }
 }

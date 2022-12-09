@@ -15,8 +15,4 @@
     <ProjectReference Include="..\SafetyCommerce.Domain\SafetyCommerce.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Validations\" />
-  </ItemGroup>
-
 </Project>

@@ -10,6 +10,8 @@ namespace SafetyCommerce.Domain.Entities
 {
     public class AppUser: IdentityUser
     {
+        public string Name { get; set; }
+        public string SurName { get; set; }
         public string Status { get; set; }
     }
 }

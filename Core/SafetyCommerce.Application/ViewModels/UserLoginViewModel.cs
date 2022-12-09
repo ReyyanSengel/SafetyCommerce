@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace SafetyCommerce.Application.ViewModels
 {
-    public class TwoFaktorVerifyWM
+    public class UserLoginViewModel
     {
+        public string UserName { get; set; }
+        public string Password { get; set; }
     }
 }

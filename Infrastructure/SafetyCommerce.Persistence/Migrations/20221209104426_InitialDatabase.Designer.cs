@@ -12,8 +12,8 @@ using SafetyCommerce.Persistence.Context;
 namespace SafetyCommerce.Persistence.Migrations
 {
     [DbContext(typeof(SafetyCommerceDbContext))]
-    [Migration("20221208203803_Initial")]
-    partial class Initial
+    [Migration("20221209104426_InitialDatabase")]
+    partial class InitialDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -182,6 +182,9 @@ namespace SafetyCommerce.Persistence.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -203,6 +206,9 @@ namespace SafetyCommerce.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SurName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -237,14 +243,13 @@ namespace SafetyCommerce.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Phone")
-                        .HasMaxLength(11)
                         .HasColumnType("int");
 
                     b.Property<string>("ReferenceCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TCKN")
-                        .HasColumnType("int");
+                    b.Property<string>("TCKN")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Why")
                         .HasColumnType("nvarchar(max)");
@@ -272,14 +277,13 @@ namespace SafetyCommerce.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Phone")
-                        .HasMaxLength(11)
                         .HasColumnType("int");
 
                     b.Property<string>("ReferenceCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TCKN")
-                        .HasColumnType("int");
+                    b.Property<string>("TCKN")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -296,20 +300,20 @@ namespace SafetyCommerce.Persistence.Migrations
 
                     b.Property<string>("NameSurname")
                         .IsRequired()
-                        .HasColumnType("nvarchar");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("Personality")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ReceiverPhone")
-                        .HasMaxLength(11)
                         .HasColumnType("int");
 
                     b.Property<string>("ReferenceCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TCKN")
-                        .HasColumnType("int");
+                    b.Property<string>("TCKN")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -326,7 +330,8 @@ namespace SafetyCommerce.Persistence.Migrations
 
                     b.Property<string>("NameSurname")
                         .IsRequired()
-                        .HasColumnType("nvarchar");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("NumberPlate")
                         .IsRequired()
@@ -337,20 +342,20 @@ namespace SafetyCommerce.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
-                        .HasMaxLength(8)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("ReceiverEmail")
                         .IsRequired()
-                        .HasColumnType("nvarchar");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("ReceiverPhone")
-                        .HasMaxLength(11)
                         .HasColumnType("int");
 
                     b.Property<string>("SupplierEmail")
                         .IsRequired()
-                        .HasColumnType("nvarchar");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("SupplierIBAN")
                         .IsRequired()
@@ -358,11 +363,10 @@ namespace SafetyCommerce.Persistence.Migrations
                         .HasColumnType("nvarchar(26)");
 
                     b.Property<int>("SupplierPhone")
-                        .HasMaxLength(11)
                         .HasColumnType("int");
 
-                    b.Property<int>("TCKN")
-                        .HasColumnType("int");
+                    b.Property<string>("TCKN")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

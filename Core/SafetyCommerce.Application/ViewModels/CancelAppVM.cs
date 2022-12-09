@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SafetyCommerce.Application.ViewModels
 {
-    public class ReceiverAppVM : BaseEntityVM
+    public class CancelAppVM : BaseEntityVM
     {
-        public string NameSurname { get; set; }
-        public int ReceiverPhone { get; set; }
+        public int Phone { get; set; }
+        public string Why { get; set; }
         public string ReferenceCode { get; set; }
     }
 }

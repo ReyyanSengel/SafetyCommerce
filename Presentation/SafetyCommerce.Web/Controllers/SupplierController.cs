@@ -26,10 +26,10 @@ namespace SafetyCommerce.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult SupplierApp(SupplierAppVM supplier)
+        public async Task<IActionResult> SupplierApp(SupplierAppVM supplier)
         {
             
-            _supplierAppService.AddAsync(_mapper.Map<SupplierApp>(supplier));
+          await _supplierAppService.AddAsync(_mapper.Map<SupplierApp>(supplier));
             return RedirectToAction("AuthenticatorVerify", "TwoAuthentication");
         }
 

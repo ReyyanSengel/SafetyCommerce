@@ -14,6 +14,7 @@ namespace SafetyCommerce.Application.Mapping
         public MapProfile()
         {
             CreateMap<SupplierApp,SupplierAppVM>().ReverseMap();
+            CreateMap<ReceiverApp,ReceiverAppVM>().ReverseMap();
         }
     }
 }

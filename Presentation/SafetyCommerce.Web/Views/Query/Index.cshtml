@@ -1,0 +1,36 @@
+﻿@model QueryAppVM
+
+<div class="col-12 grid-margin stretch-card ">
+    <div class="card ">
+        <div class="card-body">
+            <b><p class="card-description"> BAŞVURU DURUM SORGULAMA </p></b>
+            <form asp-action="SupplierApp" class="forms-sample" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <select name="kişilik">
+                        <option value="Personality">Gerçek Kişilik</option>
+                        <option value="Personality">Tüzel Kişilik</option>
+                    </select>
+                </div>
+                <br />
+                
+                <div class="form-group">
+                    <input class="form-control" type="text" asp-for="TCKN" placeholder="T.C. Kimlik Numarası" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <input class="form-control" type="text" asp-for="Phone" placeholder=" Cep Telefonu Numarası" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <input class="form-control" type="text" asp-for="ReferenceCode" placeholder="Referans Kodu" />
+                </div>
+                
+                <br />
+                <a asp-controller="Query" asp-action="QueryAuthenticatorVerify" class="btn btn-info mr-2">Sorgula</a>
+            </form>
+
+        </div>
+    </div>
+</div>
+

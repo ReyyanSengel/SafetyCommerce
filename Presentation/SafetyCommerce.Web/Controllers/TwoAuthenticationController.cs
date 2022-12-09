@@ -36,16 +36,12 @@ namespace SafetyCommerce.Web.Controllers
             VerifyState verifyState = await _authenticatorService.Verify(model, user);
             if (verifyState.State)
             {
-                
-                
+                user.TwoFactorEnabled = true;
             }
             return View(model);
+
         }
 
-        public async Task<IActionResult> SMSVerify()
-        {
-           
-            return View();
-        }
+       
     }
 }

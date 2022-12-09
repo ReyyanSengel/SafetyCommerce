@@ -11,29 +11,30 @@ namespace SafetyCommerce.Domain.EntityTypeBuilder
 {
     public class SupplierAppTypeBuilder : IEntityTypeConfiguration<SupplierApp>
     {
-        public void Configure(EntityTypeBuilder<SupplierApp> builder)
+        public  void Configure(EntityTypeBuilder<SupplierApp> builder)
         {
             builder.Property(x => x.NameSurname)
              .IsRequired()
-             .HasColumnType("nvarchar");
+             .HasColumnType("nvarchar")
+             .HasMaxLength(256);
 
             builder.Property(x => x.SupplierEmail)
              .IsRequired()
-             .HasColumnType("nvarchar");
+             .HasColumnType("nvarchar")
+             .HasMaxLength(50);
 
             builder.Property(x => x.ReceiverEmail)
              .IsRequired()
-             .HasColumnType("nvarchar");
+             .HasColumnType("nvarchar")
+             .HasMaxLength(50);
 
             builder.Property(x => x.SupplierPhone)
              .IsRequired()
-             .HasColumnType("int")
-             .HasMaxLength(11);
+             .HasColumnType("int");
 
             builder.Property(x => x.ReceiverPhone)
              .IsRequired()
-             .HasColumnType("int")
-             .HasMaxLength(11);
+             .HasColumnType("int");
 
             builder.Property(x => x.SupplierIBAN)
              .IsRequired()
@@ -47,12 +48,14 @@ namespace SafetyCommerce.Domain.EntityTypeBuilder
 
             builder.Property(x => x.Price)
              .IsRequired()
-             .HasColumnType("decimal(18,2)")
-             .HasMaxLength(8);
-
+             .HasColumnType("decimal(18,2)");
+             
         }
-
-
-
     }
 }
+
+
+
+
+             
+

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SafetyCommerce.Persistence.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,6 +28,8 @@ namespace SafetyCommerce.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SurName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -55,11 +57,11 @@ namespace SafetyCommerce.Persistence.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Phone = table.Column<int>(type: "int", maxLength: 11, nullable: false),
+                    Phone = table.Column<int>(type: "int", nullable: false),
                     Why = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ReferenceCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Personality = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TCKN = table.Column<int>(type: "int", nullable: false)
+                    TCKN = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -72,12 +74,12 @@ namespace SafetyCommerce.Persistence.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Phone = table.Column<int>(type: "int", maxLength: 11, nullable: false),
+                    Phone = table.Column<int>(type: "int", nullable: false),
                     ReferenceCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ApplicationStatus = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PayInformation = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Personality = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TCKN = table.Column<int>(type: "int", nullable: false)
+                    TCKN = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -90,11 +92,11 @@ namespace SafetyCommerce.Persistence.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NameSurname = table.Column<string>(type: "nvarchar", nullable: false),
-                    ReceiverPhone = table.Column<int>(type: "int", maxLength: 11, nullable: false),
+                    NameSurname = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
+                    ReceiverPhone = table.Column<int>(type: "int", nullable: false),
                     ReferenceCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Personality = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TCKN = table.Column<int>(type: "int", nullable: false)
+                    TCKN = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -107,16 +109,16 @@ namespace SafetyCommerce.Persistence.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NameSurname = table.Column<string>(type: "nvarchar", nullable: false),
-                    SupplierEmail = table.Column<string>(type: "nvarchar", nullable: false),
-                    SupplierPhone = table.Column<int>(type: "int", maxLength: 11, nullable: false),
-                    ReceiverEmail = table.Column<string>(type: "nvarchar", nullable: false),
-                    ReceiverPhone = table.Column<int>(type: "int", maxLength: 11, nullable: false),
+                    NameSurname = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
+                    SupplierEmail = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    SupplierPhone = table.Column<int>(type: "int", nullable: false),
+                    ReceiverEmail = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    ReceiverPhone = table.Column<int>(type: "int", nullable: false),
                     SupplierIBAN = table.Column<string>(type: "nvarchar(26)", maxLength: 26, nullable: false),
                     NumberPlate = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", maxLength: 8, nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Personality = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TCKN = table.Column<int>(type: "int", nullable: false)
+                    TCKN = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

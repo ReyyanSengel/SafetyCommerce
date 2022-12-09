@@ -16,12 +16,13 @@ namespace SafetyCommerce.Domain.EntityTypeBuilder
         {
             builder.Property(x => x.NameSurname)
                 .IsRequired()
-                .HasColumnType("nvarchar");
+                .HasColumnType("nvarchar")
+                .HasMaxLength(256);
 
             builder.Property(x => x.ReceiverPhone)
                .IsRequired()
-               .HasColumnType("int")
-               .HasMaxLength(11);
+               .HasColumnType("int");
+               
            
 
 

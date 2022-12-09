@@ -1,0 +1,44 @@
+﻿@model ReceiverAppVM
+
+<div class="container p-5">
+    <p class="text-center mt-3 p-2 lead">
+        <h4>SATICI BİLGİLERİ</h4><br />
+        <b>Referans No:</b> <br />
+        <b>Adı Soyadı:</b> <br />
+        <b>Cep Telefonu:</b> <br />
+        <b>Araç Plakası:</b> <br />
+        <b>Satış Tutarı:</b> <br /><br />
+        <b><p class="card-description"> ALICI BİLGİLERİ </p></b>
+        <form asp-action="Information" class="forms-sample" method="post">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <select name="kişilik">
+                    <option value="Personality">Gerçek Kişilik</option>
+                    <option value="Personality">Tüzel Kişilik</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <input class="form-control" type="text" asp-for="NameSurname" placeholder="Alıcı Adı ve Soyadı" />
+            </div>
+            <br />
+            <div class="form-group">
+                <input class="form-control" type="text" asp-for="TCKN" placeholder="T.C. Kimlik Numarası" />
+            </div>
+            <br />
+            <div class="form-group">
+                <input class="form-control" type="text" asp-for="ReceiverPhone" placeholder="Alıcı Cep Telefonu Numarası" />
+            </div>
+            <br />
+            <a asp-action="Index" asp-controller="Home" class="btn btn-light ">Vazgeç</a>
+            <a asp-controller="Receiver" asp-action="ReceiverAuthenticatorVerify" class="btn btn-info mr-2">Devam</a>
+
+
+        </form>
+
+
+
+
+
+</div>
+

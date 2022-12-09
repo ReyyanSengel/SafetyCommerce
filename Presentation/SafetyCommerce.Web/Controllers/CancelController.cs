@@ -1,49 +1,28 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SafetyCommerce.Application.Interfaces.IServices;
 using SafetyCommerce.Application.ViewModels;
 using SafetyCommerce.Domain.Entities;
-using SafetyCommerce.Infrastructure.Services;
 
 namespace SafetyCommerce.Web.Controllers
 {
-    [AllowAnonymous]
-    public class ReceiverController : Controller
+    public class CancelController : Controller
     {
-        private readonly IReceiverAppService _receiverAppService;
-        private readonly IMapper _mapper;
         private readonly IAuthenticatorService _authenticatorService;
         private readonly UserManager<AppUser> _userManager;
 
-        public ReceiverController(IReceiverAppService receiverAppService, IMapper mapper, IAuthenticatorService authenticatorService, UserManager<AppUser> userManager)
+        public CancelController(IAuthenticatorService authenticatorService, UserManager<AppUser> userManager)
         {
-            _receiverAppService = receiverAppService;
-            _mapper = mapper;
             _authenticatorService = authenticatorService;
             _userManager = userManager;
         }
 
-        public IActionResult ReceiverApp()
+        public IActionResult Index()
         {
             return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> ReceiverApp(ReceiverAppVM receiver)
-        {
-            await _receiverAppService.AddAsync(_mapper.Map<ReceiverApp>(receiver));
-            return View();
-        }
-
-        public IActionResult Information()
-        {
-            
-            return View();
-        }
-
-        public async Task<IActionResult> ReceiverAuthenticatorVerify()
+        public async Task<IActionResult> CancelAuthenticatorVerify()
         {
             AppUser appUser = await _userManager.FindByNameAsync(User.Identity.Name);
             string sharedKey = await _authenticatorService.GenerateSharedKey(appUser);
@@ -54,7 +33,7 @@ namespace SafetyCommerce.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ReceiverAuthenticatorVerify(AuthenticatorVM model)
+        public async Task<IActionResult> CancelAuthenticatorVerify(AuthenticatorVM model)
         {
             AppUser user = await _userManager.FindByNameAsync(User.Identity.Name);
             VerifyState verifyState = await _authenticatorService.Verify(model, user);
@@ -66,7 +45,7 @@ namespace SafetyCommerce.Web.Controllers
 
         }
 
-        public IActionResult Message()
+        public IActionResult Information()
         {
             return View();
         }

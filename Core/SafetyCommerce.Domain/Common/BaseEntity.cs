@@ -10,7 +10,7 @@ namespace SafetyCommerce.Domain.Common
     {
         public int Id { get; set; }
         public string Personality { get; set; }
-        public int TCKN { get; set; }
+        public string TCKN { get; set; }
         
     }
 }

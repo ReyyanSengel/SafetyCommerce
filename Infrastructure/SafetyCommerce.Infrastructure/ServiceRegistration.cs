@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using SafetyCommerce.Application.Interfaces.IRepositorys;
 using SafetyCommerce.Application.Interfaces.IServices;
 using SafetyCommerce.Domain.Entities;
@@ -29,8 +30,12 @@ namespace SafetyCommerce.Infrastructure
             services.AddAuthentication();
             services.AddIdentity<AppUser, IdentityRole>(opt =>
             {
-                opt.User.RequireUniqueEmail = true;
+                opt.Password.RequiredLength = 6;
                 opt.Password.RequireNonAlphanumeric = false;
+                opt.Password.RequireUppercase = false;
+                opt.Password.RequireLowercase = false;
+                opt.Password.RequireDigit = false;
+                opt.User.RequireUniqueEmail = true;
             }).AddEntityFrameworkStores<SafetyCommerceDbContext>().AddDefaultTokenProviders();
 
             services.AddMvc(config =>

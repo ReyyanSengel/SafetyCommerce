@@ -18,8 +18,8 @@ namespace SafetyCommerce.Domain.EntityTypeBuilder
 
             builder.Property(x => x.TCKN)
                .IsRequired()
-               .HasColumnType("int")
-               .HasMaxLength(11);
+               .HasColumnType("nvarchar")
+               .HasMaxLength(256);
 
         }
     }
